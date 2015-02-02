@@ -5,52 +5,66 @@
   $large-screen: em(860) !default;
   //////////////////////////////////////////////////////////////////////////////////
 
-  $hero-background-top: #7F99BE; 
+  $hero-background-top: #7F99BE;
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  $text-shadow: 1px 1px 1px #2a2a5a;
+  $hero-image: image-url('hero1.jpg', true);
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+  @include background(url($hero-image), no-repeat $hero-background-top scroll);
+  margin-top: -$base-navigation-height;
   background-color: #324766;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 3em;
 
-  .hero-logo img {
-    height: 4em;
-    margin-bottom: 1em;
-  }
-
   .hero-inner {
     @include outer-container;
     @include clearfix;
     color: $hero-color;
     margin: auto;
-    padding: 3.5em;
+    padding: 3em;
     text-align: center;
+    position: relative;
+    top: 50%;
+    @include media(max-width $medium-screen) {
+      top: 28%;
+    }
 
     .hero-copy {
       text-align: center;
- 
+      margin-top: -15%; 
       h1 {
-        font-size: 1.6em;
-        margin-bottom: 0.5em;
+        font-size: 2em;
+        margin-bottom: 0.2em;
+        text-transform: uppercase;
+        text-shadow: $text-shadow;
 
         @include media($large-screen) {
-          font-size: 1.8em;
+          font-size: 2.6em;
+        }
+
+        @include media($large-screen) {
+          font-size: 3.4em;
         }
       }
 
       p {
+        font-size: 1.2em;
         font-weight: 200;
-        line-height: 1.4em;
+        line-height: 1.2em;
         margin: 0 auto 3em auto; 
+        text-shadow: $text-shadow;
 
         @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
+          font-size: 1.6em;
+        }
+
+        @include media($large-screen) {
+          font-size: 1.8em;
+          max-width: 80%;
         }
       }
     }

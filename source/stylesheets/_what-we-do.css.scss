@@ -1,0 +1,65 @@
+.what-we-do {
+  @include outer-container;
+  .item {
+    margin: 6em auto;
+    @include media(max-width $medium-screen) {
+      margin: 3em auto;
+    }
+    padding: 1em;
+    @include row;
+
+    img {
+      max-width: em(200px);
+      max-height: em(164px);
+      margin: auto 3em;
+      @include media(max-width $large-screen) {
+        max-width: em(180px);
+        margin: auto 2em;
+      }
+
+      @include media(max-width $medium-screen) {
+        margin: 2em auto;
+        display: block;
+      }
+    }
+
+    .text {
+      width: em(410px);
+      vertical-align: 26px;
+
+      @include media(max-width $large-screen) {
+        width: 360px;
+        vertical-align: 4px;
+      }
+
+      @include media(max-width $medium-screen) {
+        width: 100%;
+        text-align: center;
+        vertical-align: baseline;
+      }
+    }
+
+    img,
+    .text {
+      @include media(min-width $medium-screen) {
+        display: inline-block;
+      }
+    }
+  }
+
+  .web {
+  }
+
+  .mobile {
+    @include media(min-width $medium-screen) {
+      img,
+      .text {
+        float: right;
+      }
+      .text {
+        text-align: right;
+        margin-top: 20px;
+      }
+    }
+  }
+}
