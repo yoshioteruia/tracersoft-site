@@ -1,7 +1,7 @@
 .what-we-do {
   @include outer-container;
   .item {
-    margin: 6em auto;
+    margin: 4em auto;
     @include media(max-width $medium-screen) {
       margin: 3em auto;
     }

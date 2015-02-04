@@ -1,0 +1,28 @@
+.work-with-us {
+  $color: #2980b9;
+  background-color: $color;
+  padding: 4em 1em;
+
+  article {
+    @include outer-container;
+    text-align: center;
+    h1 {
+      color: #fafafa;
+      margin: 10px 0;
+    }
+
+    p {
+      color: #fafafa;
+      font-size: 1.2em;
+    }
+
+    .button {
+      margin: 20px auto 10px auto;
+      @extend button;
+      background-color: lighten($color, 10%);
+      &:hover {
+        background-color: lighten($color, 18%);
+      }
+    }
+  }
+}
